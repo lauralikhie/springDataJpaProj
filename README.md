@@ -1,0 +1,2 @@
+# springDataJpaProj
+Sample learning project
