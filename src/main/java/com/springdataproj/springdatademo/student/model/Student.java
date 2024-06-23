@@ -1,14 +1,20 @@
 package com.springdataproj.springdatademo.student.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
 import java.time.LocalDate;
 
+@Entity
 public class Student {
 
-     private Long id ;
-     private String name  ;
-     private LocalDate DOB ;
-     private String email ;
-     private int age ;
+    @Id
+    private Long id;
+    private String name;
+    private LocalDate DOB;
+    private String email;
+    private int age;
 
     public Long getId() {
         return id;

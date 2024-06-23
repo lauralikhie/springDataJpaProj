@@ -2,26 +2,23 @@ package com.springdataproj.springdatademo.student.controller;
 
 
 import com.springdataproj.springdatademo.student.model.Student;
+import com.springdataproj.springdatademo.student.service.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.List;
 
 @RestController
+@RequestMapping("/api/v1/student")
 public class StudentController {
 
-      @GetMapping(path = "/student")
+    @Autowired
+    private StudentService studentService;
+
+    @GetMapping(path = "/getstudents")
     public List<Student> getString() {
-           return List.of(
-                   new Student(
-                            1l  ,
-                           "Mariam",
-                           LocalDate.of(2000, Month.JANUARY,21) ,
-                           "mariam@gmail.com",
-                           21
-                   )
-           ) ;
-      }
+       return studentService.getStudents();
+    }
 }
